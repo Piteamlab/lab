@@ -1,0 +1,139 @@
+body {
+
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  }
+  header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 24px;
+    color: #00ffff;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 300;
+  }
+  .log{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .login-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #000;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  .Createanaccount{
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .Createanaccount a{
+    text-decoration: none;
+    color: #007bff;
+  }
+  .Createanaccount a:hover{
+    text-decoration: underline;
+    color: red;
+  }
+  .forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .forgot-password a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .forgot-password a:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  .username{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .password{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000 ;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #aaa;
+    font-size: 14px;
+  }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lấy lại mật khẩu</title>
+  <link rel="stylesheet" href="Laylaimatkhau.css">
+</head>
+<body>
+    <header>
+        <h1>Pitechlab</h1>
+        <nav>
+          <a href="pitech.html">Trang chủ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      <a href="thuctap.html">Thực tập</a>
+      <a href="baigiang.html">Bài giảng</a>
+      <a href="ngiencuu.html">Nghiên cứu</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="sukien.html">Sự kiện</a>
+      <a href="Dangnhap.html" style="color: #00ffff; font-weight: 600;">Đăng nhập</a>
+        </nav>
+      </header>
+  <div class="conner">
+    <div class="container">
+        <h2>Lấy lại mật khẩu</h2>
+    
+        <label for="phone">Số điện thoại</label>
+        <input type="text" id="phone" placeholder="Nhập số điện thoại" />
+    
+        <button onclick="sendOTP()">Gửi mã xác nhận</button>
+    
+        <div id="otpSection" style="display: none;">
+          <label for="otp">Mã OTP</label>
+          <input type="text" id="otp" placeholder="Nhập mã OTP" />
+    
+          <button onclick="verifyOTP()">Xác nhận</button>
+        </div>
+    
+        <div id="message" class="message"></div>
+      </div>
+  </div>
+  <footer>
+    © 2025 Pitechlab. All rights reserved. <br>
+    Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội <br>
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech
+  </footer>
+  <script>
+    let generatedOTP = "";
+
+    function sendOTP() {
+      const phone = document.getElementById("phone").value;
+      if (!phone.match(/^0\d{9}$/)) {
+        alert("Vui lòng nhập số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0).");
+        return;
+      }
+      generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+      console.log("Mã OTP gửi về số điện thoại:", generatedOTP);
+
+      document.getElementById("message").innerText = "Mã xác nhận đã được gửi về số điện thoại của bạn.";
+      document.getElementById("otpSection").style.display = "block";
+    }
+
+    function verifyOTP() {
+      const otp = document.getElementById("otp").value;
+      if (otp === generatedOTP) {
+        document.getElementById("message").innerText = "Xác nhận thành công. Bạn có thể đặt lại mật khẩu.";
+      } else {
+        document.getElementById("message").innerText = "Mã OTP không chính xác. Vui lòng thử lại.";
+      }
+    }
+  </script>
+</body>
+</html>

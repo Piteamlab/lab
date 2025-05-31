@@ -1,0 +1,127 @@
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e1a2b;
+      color: #ffffff;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #00ffff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 300;
+    }
+    nav a:hover {
+      color: #00f7ff;
+    }
+
+    section.product-section {
+      padding: 80px 20px;
+      background: linear-gradient(to bottom, #1b2735, #0a0a0f);
+      text-align: center;
+    }
+
+    .product-section h2 {
+      font-size: 40px;
+      color: #00e6e6;
+      margin-bottom: 20px;
+    }
+
+    .product-section p {
+      font-size: 18px;
+      color: #cccccc;
+      margin-bottom: 50px;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: #152030;
+      border: 1px solid #00e6e6;
+      border-radius: 12px;
+      padding: 30px 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 255, 255, 0.15);
+    }
+
+    .product-card i {
+      font-size: 42px;
+      color: #00e6e6;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #ffffff;
+    }
+
+    .product-card p {
+      color: #cccccc;
+      font-size: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+      font-size: 14px;
+    }
+    .user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #dbeafe;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}

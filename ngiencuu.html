@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pitechlab - Nghiên cứu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="nghiencuu.css">
+</head>
+<body>
+  <header>
+    <h1>Pitechlab</h1>
+    <nav>
+      <a href="pitech.html">Trang chủ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      <a href="thuctap.html">Thực tập</a>
+      <a href="baigiang.html">Bài giảng</a>
+      <a href="ngiencuu.html"style="color: #00ffff; font-weight: 600;">Nghiên cứu</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="sukien.html">Sự kiện</a>
+      <a href="Dangnhap.html"style="color: #00ffff; font-weight: 600;" >Đăng nhập</a>
+    </nav>
+  </header>
+
+  <section class="research-section">
+    <h2>Nghiên cứu nổi bật</h2>
+    <p>Khám phá những xu hướng công nghệ mới nhất mà Pitechlab đang tập trung nghiên cứu và phát triển.</p>
+    <div class="research-grid">
+      <a href="#" onclick="handleAccess('b-2.html')">
+      <div class="research-card">
+        <i class="fas fa-robot"></i>
+        <h3>Trí tuệ nhân tạo</h3>
+        <p>Phát triển mô hình AI thông minh phục vụ các bài toán phức tạp trong y tế, giáo dục và công nghiệp.</p>
+      </div>
+      </a>
+      <div class="research-card">
+        <i class="fas fa-satellite"></i>
+        <h3>Cảm biến & IoT</h3>
+        <p>Xây dựng hệ thống cảm biến thông minh kết nối dữ liệu thực tế với nền tảng phân tích từ xa.</p>
+      </div>
+      <div class="research-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>An ninh mạng</h3>
+        <p>Phát hiện và ngăn chặn các mối đe dọa mạng bằng công nghệ mã hóa và machine learning hiện đại.</p>
+      </div>
+    </div>
+  </section>
+    <script>
+function handleAccess(targetPage) {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true") {
+    // Nếu đã đăng nhập thì chuyển đến trang bài giảng chi tiết
+    window.location.href = targetPage;
+  } else {
+    // Nếu chưa đăng nhập thì lưu trang đích và chuyển sang đăng nhập
+    alert("Bạn cần đăng nhập để xem nội dung nghiên cứu.");
+    localStorage.setItem("redirectAfterLogin", targetPage);
+    window.location.href = "dangnhap.html"; // Đường dẫn tới trang đăng nhập
+  }
+}
+</script>
+  <footer>
+    © 2025 Pitechlab. All rights reserved.<br>
+    Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội <br>
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech
+  </footer>
+</body>
+</html>

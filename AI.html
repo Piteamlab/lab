@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pitechlab - Nghiên cứu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color:#152030;
+      color: #ffffff;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #00ffff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 300;
+    }
+    nav a:hover {
+      color: #00f7ff;
+    }
+    .section-title {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: #004b8d;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1600px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      color: #004b8d;
+      margin-top: 0;
+    }
+
+    .card-content p {
+      color: #333;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+     
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2563eb;
+      font-size: 30px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 20px 60px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #chatbox {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 20px;
+      height: 200px;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .message {
+      margin-bottom: 10px;
+    }
+    .user {
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .ai {
+      color: #16a34a;
+      font-weight: bold;
+    }
+    .cards-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    .cards-section h2 {
+      text-align: center;
+      color: #1d4ed8;
+      margin-bottom: 30px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .tile {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .tile:hover {
+      transform: translateY(-5px);
+    }
+    .tile h3 {
+      color: #2563eb;
+      margin-top: 0;
+    }
+    .tile p {
+      color: #333;
+      font-size: 14px;
+    }
+        .footer {
+  background: #111;
+      color: #aaa;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  text-align: left;
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-bottom: 2px solid #ffffff44;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-contact a {
+  color: #ffdd57;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-credit {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+  </style>
+<body>
+    <header>
+    <h1>Pitechlab</h1>
+    <nav>
+      <a href="trangchu.php">Trang chủ</a>
+      <a href="gioithieu.php">Giới thiệu</a>
+      <a href="t">Thực tập</a>
+      <a href="baigiang.html">Bài giảng</a>
+      <a href="ngiencuu.html">Nghiên cứu</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="sukien.html">Sự kiện</a>
+      <a href="Dangnhap.html" style="color: #00ffff; font-weight: 600;">Đăng nhập</a>
+    </nav>
+    </header>
+    <h2 class="section-title">AI trong Y Tế – Ứng Dụng Nổi Bật</h2>
+
+  <div class="card-container">
+    <div id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); align-items:center; justify-content:center;">
+      <span id="closeModal" style="position:absolute; top:30px; right:50px; font-size:40px; color:#fff; cursor:pointer; z-index:10001;">&times;</span>
+      <img id="modalImg" src="" alt="Xem ảnh" style="max-width:98vw; max-height:96vh; border-radius:10px; box-shadow:0 4px 16px #000;">
+    </div>
+
+    <div class="card">
+      <a href="https://vjst.vn/Images/editor/images/2021/Thang%208/BAC-%20PHAM%20HUY%20HIEU%20-3.jpg" data-lightbox="gallery">
+      <img src="https://vjst.vn/Images/editor/images/2021/Thang%208/BAC-%20PHAM%20HUY%20HIEU%20-3.jpg" alt="Chẩn đoán hình ảnh">      
+      </a>
+      <div class="card-content">
+        <h3>Chẩn đoán hình ảnh</h3>
+        <p>AI phân tích X-quang, MRI, CT để phát hiện sớm ung thư, tổn thương, viêm phổi và các bất thường.</p>
+      </div>
+    </div>
+
+    
+
+    <div class="card">
+       <a href="https://cdn.nhathuoclongchau.com.vn/unsafe/https://cms-prod.s3-sgn09.fptcloud.com/cach_doc_ket_qua_chay_may_monitor_1_25ca3a7af0.png " data-lightbox="gallery">
+      <img src="https://cdn.nhathuoclongchau.com.vn/unsafe/https://cms-prod.s3-sgn09.fptcloud.com/cach_doc_ket_qua_chay_may_monitor_1_25ca3a7af0.png  " alt="Hỗ trợ ra quyết định">
+      </a>
+      <div class="card-content">
+        <h3>Hỗ trợ ra quyết định</h3>
+        <p>Hệ thống AI đưa ra gợi ý điều trị, đánh giá nguy cơ dựa trên dữ liệu bệnh nhân trong thời gian thực.</p>
+      </div>
+    </div>
+
+    <div class="card">
+       <a href="https://www.tdk.com/en/tech-mag/sites/default/files/2024-12/Healthcare_AI.jpg" data-lightbox="gallery">
+      <img src="https://www.tdk.com/en/tech-mag/sites/default/files/2024-12/Healthcare_AI.jpg" alt="Theo dõi từ xa">
+      </a>
+      <div class="card-content">
+        <h3>Theo dõi từ xa</h3>
+        <p>AI kết hợp thiết bị đeo giúp theo dõi tình trạng sức khỏe bệnh nhân liên tục và cảnh báo sớm bất thường.</p>
+      </div>
+      <script>
+      // Lấy tất cả các thẻ a có data-lightbox
+      document.querySelectorAll('a[data-lightbox="gallery"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var modal = document.getElementById('imageModal');
+          var modalImg = document.getElementById('modalImg');
+          modalImg.src = this.href;
+          modal.style.display = 'flex';
+        });
+      });
+
+      // Đóng modal khi bấm nút X
+      document.getElementById('closeModal').onclick = function() {
+        document.getElementById('imageModal').style.display = 'none';
+        document.getElementById('modalImg').src = '';
+      };
+
+      // Đóng modal khi bấm ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+          document.getElementById('imageModal').style.display = 'none';
+          document.getElementById('modalImg').src = '';
+        }
+      });
+
+      // Đóng modal khi click ra ngoài ảnh
+      document.getElementById('imageModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.style.display = 'none';
+          document.getElementById('modalImg').src = '';
+        }
+      });
+    </script>
+    </div>
+
+  </div>
+<h2 class="section-title">EduBot - Trợ lý học tập AI
+    <p>Cá nhân hóa việc học, giải thích bài tập, tạo đề ôn tập tự động</p></h2>
+ 
+
+  <section>
+    <h2>💬 Trò chuyện với EduBot</h2>
+    <div id="chatbox"></div>
+    <textarea id="question" placeholder="Nhập câu hỏi của bạn..."></textarea>
+    <button onclick="askAI()">Gửi</button>
+  </section>
+
+  <section class="cards-section">
+    <h2>✨ Ứng dụng AI trong Giáo dục và Công nghiệp</h2>
+    <div class="grid">
+      <div class="tile">
+        <h3>Trợ giảng ảo</h3>
+        <p>AI hỗ trợ học sinh giải bài tập, ôn tập kiến thức và tương tác 24/7 với độ chính xác cao.</p>
+      </div>
+      <div class="tile">
+        <h3>Cá nhân hóa học tập</h3>
+        <p>Hệ thống AI theo dõi tiến độ học tập và đề xuất tài liệu phù hợp với năng lực học sinh.</p>
+      </div>
+      <div class="tile">
+        <h3>Đánh giá tự động</h3>
+        <p>AI có thể chấm bài kiểm tra và đưa ra phản hồi chi tiết giúp giáo viên tiết kiệm thời gian.</p>
+      </div>
+      <div class="tile">
+        <h3>Dự đoán sản xuất</h3>
+        <p>Trong công nghiệp, AI dự đoán nhu cầu và tối ưu hóa quy trình nhằm nâng cao hiệu suất.</p>
+      </div>
+      <div class="tile">
+        <h3>Bảo trì dự đoán</h3>
+        <p>AI phân tích dữ liệu để phát hiện lỗi tiềm ẩn trong máy móc trước khi xảy ra sự cố thực tế.</p>
+      </div>
+      
+      <div class="tile">
+        <h3>Tối ưu logistics</h3>
+        <p>Trong công nghiệp, AI phân tích lộ trình và tồn kho để giảm chi phí vận hành và giao hàng.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+
+    function appendMessage(sender, text) {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = "message";
+      messageDiv.innerHTML = `<span class="${sender}">${sender === 'user' ? 'Bạn' : 'EduBot'}:</span> ${text}`;
+      chatbox.appendChild(messageDiv);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    async function askAI() {
+      const question = document.getElementById("question").value;
+      if (!question.trim()) return;
+      appendMessage("user", question);
+      document.getElementById("question").value = "";
+
+      appendMessage("ai", "Đang suy nghĩ...");
+
+      try {
+        const response = await fetch("https://edubot-backend.onrender.com/ask", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ question })
+        });
+
+        const data = await response.json();
+        const aiReply = data.reply;
+
+        const waiting = chatbox.querySelector(".ai:last-child").parentElement;
+        chatbox.removeChild(waiting);
+
+        appendMessage("ai", aiReply);
+      } catch (error) {
+        const waiting = chatbox.querySelector(".ai:last-child").parentElement;
+        if (waiting) chatbox.removeChild(waiting);
+        appendMessage("ai", "Xin lỗi, đã xảy ra lỗi khi kết nối đến máy chủ AI.");
+        console.error(error);
+      }
+    }
+  </script>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-contact">
+      <h3>Liên hệ</h3>
+      <p>Email: <a href="mailto:info@duan-cambien.vn">info@duan-cambien.vn</a></p>
+      <p>Đ© 2025 Pitechlab. All rights reserved.<br>
+    
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech</p>
+    </div>
+    <div class="footer-credit">
+      © 2025 Dự án Cảm biến Thông minh<br>
+      Thiết kế bởi Nhóm Nghiên cứu<br>
+      Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội 
+    </div>
+  </div>
+</footer>
+  
+
+  
+</body>
+</html>

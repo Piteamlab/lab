@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="Dangki.css">
+  <title>Đăng ký tài khoản</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Pitechlab</h1>
+    <nav>
+      <a href="pitech.html">Trang chủ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      <a href="thuctap.html">Thực tập</a>
+      <a href="baigiang.html">Bài giảng</a>
+      <a href="ngiencuu.html">Nghiên cứu</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="sukien.html">Sự kiện</a>
+      <a href="Dangnhap.html" style="color: #00ffff; font-weight: 600;">Đăng nhập</a>
+    </nav>
+  </header>
+  <div class="conner">
+    <div class="container">
+      <h2>Đăng ký tài khoản</h2>
+      <form action="register.php" method="POST" id="logout">
+              <div class="form-group">
+                <label for="username" class="username">Tên đăng nhập</label>
+                <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập">
+                <div class="error-message" id="username-error"></div> 
+              </div>
+              <div class="form-group">
+                <label for="password" class="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu">
+                <div class="error-message" id="password-error"></div> 
+              </div>
+              <div class="form-group">
+                  <label for="repassword" class="repassword">Nhập lại mật khẩu</label>
+                  <input type="password" id="repassword" name="repassword" placeholder="Nhập lại mật khẩu">
+                  <div class="error-message" id="repassword-error"></div> 
+                </div>
+                <input type="submit" value="Đăng ký"  class="submit">
+                <div class="Createanaccount">
+                  <P>Đã có tài khoản? <a href="Dangnhap.html">Đăng nhập</a></P>
+                </div>
+                
+      </form>
+    </div>
+  </div>
+  <footer>
+    © 2025 Pitechlab. All rights reserved. <br>
+    Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội <br>
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech
+  </footer>
+  <script>
+    /*
+    const form = document.getElementById('logout');
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const usernameError = document.getElementById('username-error');
+    const passwordError = document.getElementById('password-error');
+    const repaswordInput= document.getElementById('repassword');
+    const repaswordError=document.getElementById('repassword-error')
+
+    let isValid = true;
+    if (usernameInput.value.trim() === '') {
+      usernameError.textContent = 'Bạn chưa nhập tài khoản';
+      usernameError.style.display = 'block';
+      isValid = false;
+    } else {
+      usernameError.textContent = '';
+      usernameError.style.display = 'none';
+    }
+    if (passwordInput.value.trim() === '') {
+      passwordError.textContent = 'Bạn chưa nhập mật khẩu';
+      passwordError.style.display = 'block';
+      isValid = false;
+    } else {
+      passwordError.textContent = '';
+      passwordError.style.display = 'none';
+    }
+    if (repaswordInput.value.trim() === '') {
+      repaswordError.textContent = 'Bạn chưa nhập lại mật khẩu';
+      repaswordError.style.display = 'block';
+      isValid = false;
+    } else {
+      repaswordError.textContent = '';
+      repaswordError.style.display = 'none';
+    }
+    if (isValid) {
+      alert('Đăng kí thành công!');
+    }
+});
+  */
+</script>
+
+
+
+</body>
+</html>

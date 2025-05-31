@@ -1,0 +1,133 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  }
+.map-conter {
+    width: 100%;
+    height: 400px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 24px;
+    color: #00ffff;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 300;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  span{
+    font-size: 30px;
+    color: #fff;
+  }
+  .address{
+    margin-left: 10%;
+    color: #fff;
+  }
+  a{
+    list-style: none;
+    text-decoration: none;
+  }
+  a:hover{
+    color: red;
+  }
+  h2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .first{
+    display: flex;
+    width: 100%;
+
+  }
+  .first-map{
+    width: 35%;
+    height: auto;
+    margin-left: 10%;
+  }
+  .first-Address{
+    width: 35%;
+    height: auto;
+    margin-left: 10%;
+    color: #fff;
+  }
+  .nav{
+    width: 35%;
+    height: auto;
+    background-color: rgb(145, 145, 145);
+    border: 1px solid white;
+    border-radius: 10px
+  }
+  .nav-one{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    justify-content: space-around;
+  }
+  .befor{
+    width: 30%;
+
+  }
+  .after{
+    width: 30%;
+  }
+  .nav-befor-in{
+    width: auto;
+    height: 30px;
+  }
+  .nav-after-in{
+    width: auto;
+    height: 30px;
+  }
+  .note{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    margin-top: 20px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .bt{
+    width: 30%;
+    height: 40px;
+    margin-left: 35%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .bt:hover{
+    background-color: red;
+    color: white;
+  }
+  .text{
+    margin-left: 10%;
+  }
+  .nav-img{
+    width: 35%;
+    margin-left: 10%;
+    height: auto;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #aaa;
+    font-size: 14px;
+  }

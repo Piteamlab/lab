@@ -1,0 +1,82 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    }
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #00ffff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 300;
+    }
+    .conner{
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .container {
+      max-width: 400px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="password"], input[type="repassword"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .Createanaccount{
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .Createanaccount a{
+      text-decoration: none;
+      color: #007bff;
+    }
+    .Createanaccount a:hover{
+      text-decoration: underline;
+      color: red;
+    }
+    .submit {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .error-message {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        display: none;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #111;
+        color: #aaa;
+        font-size: 14px;
+      }
+  

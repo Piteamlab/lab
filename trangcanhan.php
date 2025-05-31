@@ -1,0 +1,278 @@
+<?php
+session_start();
+$username = $_SESSION['username'];
+$avatarUrl = 'https://ui-avatars.com/api/?name=' . urlencode($username) . '&background=dbeafe&color=2563eb';
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pitechlab - Phòng nghiên cứu CNTT</title>
+  <link rel="stylesheet" href="pitech.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <style>
+    .user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #dbeafe;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pitechlab</h1>
+    <nav>
+      <div style="display: flex;">
+        <div>
+          <a href="trangchu.php">Trang chủ</a>
+          <a href="gioithieu.php">Giới thiệu</a>
+          <a href="thuctap.php">Thực tập</a>
+      <a href="baigiang.php">Bài giảng</a>
+      <a href="nghiencuu.php">Nghiên cứu</a>
+      <a href="sanpham.php">Sản phẩm</a>
+      <a href="sukien.php" >Sự kiện</a>
+        </div>
+<div class="user-dropdown">
+  <div class="user-avatar" onclick="toggleDropdown()" style="
+    width: 30px;margin-left: 20px;">
+    <img src="<?php echo $avatarUrl; ?>" alt="Avatar" style="
+    width: 100%;
+    height: 30px;">
+  </div>
+
+  <div class="dropdown-menu" id="userDropdown">
+    <a href="trangcanhan.php">Trang cá nhân</a>
+    <a href="pitech.html">Đăng xuất</a>
+  </div>
+</div>
+      </div>
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("userDropdown");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+
+  window.addEventListener("click", function(e) {
+    const dropdown = document.getElementById("userDropdown");
+    const avatar = document.querySelector(".user-avatar");
+    if (!avatar.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+</script>
+    </nav>
+  </header>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .profile-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: center;
+    }
+    .profile-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 30px;
+    }
+    .section-title {
+      text-align: left;
+      font-weight: 600;
+      margin-top: 25px;
+      color: #1e40af;
+      font-size: 18px;
+    }
+    .info-value {
+      text-align: left;
+      font-size: 16px;
+      color: #374151;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #a244ef;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #dc2626;
+    }
+    footer {
+      font-size: 14px;
+    }
+    input, textarea {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+
+  <div class="profile-container">
+    <div class="profile-title">Trang Cá Nhân</div>
+
+    <div class="section-title">Tên đăng nhập:</div>
+    <div class="info-value" id="tenNguoiDung">--</div>
+
+    <div class="section-title">Email:</div>
+    <div class="info-value" id="emailNguoiDung">--</div>
+
+    <div class="section-title">Số điện thoại:</div>
+    <div class="info-value" id="soDienThoai">--</div>
+
+    <div class="section-title">Vai trò:</div>
+    <div class="info-value" id="vaiTro">--</div>
+
+    <div class="section-title">Ngày tạo tài khoản:</div>
+    <div class="info-value" id="ngayTao">--</div>
+
+    <div class="section-title">Mô tả bản thân:</div>
+    <div class="info-value" id="moTaNguoiDung">--</div>
+
+    <button id="btnDangXuat" class="btn" onclick="dangXuat()">Đăng xuất</button>
+    <button id="btnChinhSua" class="btn" onclick="toggleChinhSua()">Chỉnh sửa hồ sơ</button>
+
+    <div id="chinhSuaForm" style="display:none; margin-top:30px; text-align:left;">
+      <label for="tenMoi">Tên đăng nhập:</label>
+      <input type="text" id="tenMoi" placeholder="Nhập tên đăng nhập..." style="width:100%; padding:8px; margin-bottom:10px;">
+
+      <label for="emailMoi">Email:</label>
+      <input type="email" id="emailMoi" placeholder="Nhập email..." style="width:100%; padding:8px; margin-bottom:10px;">
+
+      <label for="soDTMoi">Số điện thoại:</label>
+      <input type="text" id="soDTMoi" placeholder="Nhập số điện thoại..." style="width:100%; padding:8px; margin-bottom:10px;">
+
+      <label for="moTa">Mô tả bản thân:</label>
+      <textarea id="moTa" rows="3" placeholder="Viết mô tả bản thân..." style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
+
+      <button class="btn" onclick="luuChinhSua()">Lưu thay đổi</button>
+    </div>
+  </div>
+
+  <script>
+    if (!localStorage.getItem("createdDate")) {
+      const today = new Date().toLocaleDateString("vi-VN");
+      localStorage.setItem("createdDate", today);
+    }
+
+    const ten = localStorage.getItem("tenDangNhap") || "Chưa đăng nhập";
+    const email = localStorage.getItem("userEmail") || "Chưa có";
+    const role = localStorage.getItem("userRole") || "Chưa xác định";
+    const ngayTao = localStorage.getItem("createdDate") || "Không rõ";
+    const moTa = localStorage.getItem("moTaNguoiDung") || "Chưa có mô tả";
+    const soDT = localStorage.getItem("userPhone") || "Chưa có";
+
+    document.getElementById("tenNguoiDung").textContent = ten;
+    document.getElementById("emailNguoiDung").textContent = email;
+    document.getElementById("vaiTro").textContent = role;
+    document.getElementById("ngayTao").textContent = ngayTao;
+    document.getElementById("moTaNguoiDung").textContent = moTa;
+    document.getElementById("soDienThoai").textContent = soDT;
+
+    //const daDangNhap = ten !== "Chưa đăng nhập";
+    //document.getElementById("btnDangXuat").style.display = daDangNhap ? "inline-block" : "none";
+   // document.getElementById("btnChinhSua").style.display = daDangNhap ? "inline-block" : "none";
+
+    function toggleChinhSua() {
+      const form = document.getElementById("chinhSuaForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+
+      if (ten !== "Chưa đăng nhập") document.getElementById("tenMoi").value = ten;
+      if (email !== "Chưa có") document.getElementById("emailMoi").value = email;
+      if (moTa !== "Chưa có mô tả") document.getElementById("moTa").value = moTa;
+      if (soDT !== "Chưa có") document.getElementById("soDTMoi").value = soDT;
+    }
+
+    function luuChinhSua() {
+      const tenMoi = document.getElementById("tenMoi").value.trim();
+      const emailMoi = document.getElementById("emailMoi").value.trim();
+      const moTaMoi = document.getElementById("moTa").value.trim();
+      const soDTMoi = document.getElementById("soDTMoi").value.trim();
+
+      if (tenMoi) localStorage.setItem("tenDangNhap", tenMoi);
+      if (emailMoi) localStorage.setItem("userEmail", emailMoi);
+      if (moTaMoi) localStorage.setItem("moTaNguoiDung", moTaMoi);
+      if (soDTMoi) localStorage.setItem("userPhone", soDTMoi);
+
+      document.getElementById("tenNguoiDung").textContent = tenMoi;
+      document.getElementById("emailNguoiDung").textContent = emailMoi;
+      document.getElementById("moTaNguoiDung").textContent = moTaMoi;
+      document.getElementById("soDienThoai").textContent = soDTMoi;
+
+      document.getElementById("chinhSuaForm").style.display = "none";
+
+      alert("Đã lưu thay đổi.");
+    }
+
+    function dangXuat() {
+      const xacNhan = confirm("Bạn có chắc chắn muốn đăng xuất không?");
+      if (!xacNhan) return;
+
+      localStorage.removeItem("tenDangNhap");
+      localStorage.removeItem("userEmail");
+      localStorage.removeItem("userRole");
+      localStorage.removeItem("moTaNguoiDung");
+      localStorage.removeItem("createdDate");
+      localStorage.removeItem("userPhone");
+
+      alert("Bạn đã đăng xuất.");
+      window.location.href = "pitech.html";
+      }
+  </script>
+
+  <footer>
+    © 2025 Pitechlab. All rights reserved. <br>
+    Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội <br>
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech
+  </footer>
+</body>
+</html>

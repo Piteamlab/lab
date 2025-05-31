@@ -1,0 +1,50 @@
+body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      background: #0e1a2b;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #00ffff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 300;
+    }
+    nav a:hover {
+      color: #00f7ff;
+    }
+    .lecture-detail {
+      background-color: #0f1b2c;
+      color: white;
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+    .lecture-detail .container {
+      max-width: 900px;
+      margin: auto;
+      background: #1a2a40;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .lecture-detail h1, .lecture-detail h2 {
+      color: #00ffff;
+    }
+    .download-link {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pitechlab - Bài giảng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="baigiang.css">
+</head>
+<body>
+
+  <header>
+    <h1>Pitechlab</h1>
+    <nav>
+      <a href="pitech.html">Trang chủ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      <a href="thuctap.html">Thực tập</a>
+      <a href="baigiang.html" style="color:#00f7ff;">Bài giảng</a>
+      <a href="ngiencuu.html">Nghiên cứu</a>
+      <a href="sanpham.html">Sản phẩm</a>
+      <a href="sukien.html">Sự kiện</a>
+      <a href="dangnhap.html" style="color: #00ffff; font-weight: 600;">Đăng nhập</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2 class="section-title">📚 Bài giảng</h2>
+    <p class="section-description">Các bài học chất lượng cao dành cho sinh viên Công nghệ Thông tin.</p>
+    <div class="lecture-grid">
+      <div class="lecture-card">
+        <h3>Nhập môn Lập trình</h3>
+        <p>Làm quen với C++, biến, điều kiện, vòng lặp, và cấu trúc cơ bản.</p>
+        <a href="#" onclick="handleAccess('b-2.html')">Xem chi tiết</a>      </div>
+      <div class="lecture-card">
+        <h3>Cấu trúc Dữ liệu & Giải thuật</h3>
+        <p>Học về danh sách, cây, đồ thị và các thuật toán quan trọng.</p>
+        <a href="#">Xem chi tiết</a>
+      </div>
+      <div class="lecture-card">
+        <h3>Phát triển Web</h3>
+        <p>Tạo website bằng HTML, CSS, JavaScript và công nghệ hiện đại.</p>
+        <a href="#">Xem chi tiết</a>
+      </div>
+    </div>
+  </section>
+  <script>
+function handleAccess(targetPage) {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true") {
+    // Nếu đã đăng nhập thì chuyển đến trang bài giảng chi tiết
+    window.location.href = targetPage;
+  } else {
+    // Nếu chưa đăng nhập thì lưu trang đích và chuyển sang đăng nhập
+    alert("Bạn cần đăng nhập để xem nội dung bài giảng.");
+    localStorage.setItem("redirectAfterLogin", targetPage);
+    window.location.href = "dangnhap.html"; // Đường dẫn tới trang đăng nhập
+  }
+}
+</script>
+
+  <footer>
+    © 2025 Pitechlab. All rights reserved.<br>
+    Địa chỉ: số 25 ngõ 24 Hoàng Quốc Việt - Nghĩa Đô - Cầu Giấy - Hà Nội <br>
+    SĐT: 0123456789 <br>
+    email: pitech@gmail.com <br>
+    website: pitech
+  </footer>
+
+</body>
+</html>
